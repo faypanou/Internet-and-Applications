@@ -1,4 +1,4 @@
-# Internet and Applications 
+# Internet and Applications - Project
 
 ### ΘΕΜΑ :memo: 
 COVID-01 : Εύρεση των Συγγραφέων με τα περισσότερα άρθρα που αφορούν μία συγκεκριμένη ασθένεια
