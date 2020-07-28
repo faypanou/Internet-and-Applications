@@ -13,4 +13,4 @@ To project θα αφορά την υλοποίηση μιας διαδικτυα
 HTML,
 CSS,
 JAVASCRIPT/JAVA, 
-[Papaparse](https://www.papaparse.com/) (ενδεχομένως για την ανάγνωση του CSV) 
+MongoDB
