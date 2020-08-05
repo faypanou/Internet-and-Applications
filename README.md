@@ -15,4 +15,4 @@ CSS,
 node.js,
 Javascript, 
 MongoDB, 
-mongoose 
+mongoose. 
