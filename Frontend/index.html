@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Appathon Project</title>
+
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Candal">
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+  <!--banner-->
+  <section id="banner" class="banner">
+    <div class="bg-color">
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="col-md-12">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+              </button>
+              <div class="col-md-4 col-sm-4">
+                <div class="service-info">
+                  <div>
+                    <br>
+                    <h2 style="width:190px;font-size:18px; color: #0cb8b6; padding-top:auto;">Appathon Project</h2>
+                  </div>
+                  </div>
+                  </div>
+            </div>
+            <div class="collapse navbar-collapse navbar-right" id="myNavbar">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#banner">Home</a></li>
+                <li class=""><a href="#search">Search</a></li>
+                <li class=""><a href="#histogram">Histogram</a></li>
+                </head>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <div class="row">
+          <div class="banner-info">
+            <div class="banner-text text-center">
+              <br>
+              <h2 class="white"><b>Welcome to our site</b></h2>
+              <br>
+              <p><b>Here you can find the number of articles written for</b></p>
+              <p><b>a particular disease or virus during a specific time period !</b></p>
+            </div>
+            <div class="overlay-detail text-center">
+              <a href="#service"><i class="fa fa-angle-down"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  
+
+  <!--search-->
+
+
+<br><br>
+  <section id="search" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-4 col-xs-12">
+          <div class="section-title">
+            <h2 class="head-title lg-line">SEARCH</h2>
+            <hr class="botm-line">
+            <br>
+            <p class="sec-para">Please enter maximum 5 diseases separated with a comma and choose a time period. Then click "Submit".</p>
+            <p class="sec-para">You will be able to see the number of articles refering to the chosen disease regarding that time period, the year with the maximum publications and the number of the latter.  </p>
+            <a href="" style="color: #0cb8b6; padding-top:10px;"></a>
+          </div>
+        </div>
+
+        <div class="col-md-9 col-sm-8 col-xs-12">
+          <div style="visibility: visible;" class="col-sm-9 more-features-box">
+            <div class="more-features-box-text">
+               <i  aria-hidden="true"></i> </div>
+              <div class="more-features-box-text-description" style="width:700px">
+               <br><br>
+                  <table>
+                    <tr><h3>NAME OF DISEASE</h3></tr>
+                    <tr><input onchange='checkInput()' id="disease"></tr>
+                    <tr><div id = "error_input"></div></tr>
+                  </table>
+                  <br><br>
+                
+
+              
+              <table>
+                <tr style = "height:30px;">
+                  <tr><h3>DATES</h3></tr>
+                </tr>
+                <tr>
+                  <Label style = "margin-right:25px;">From</Label><input  id="from" type="date" name="from" style="width:150px" >
+                  <Label style = "padding-left:25px;margin-right:25px;">To</Label><input onchange='check("from","to","error_date")' id='to' type="date" name="to" style="width:150px" >
+                  </tr>
+                  <tr><div id = "error_date"></div></tr>
+              </table>
+              <br><br>
+              <button onclick= 'apply()' class="btn btn-success" style="background-color: #0cb8b6; border-color: #0cb8b6;color:white;width:150px;
+              height:auto; margin-right:25px">Submit</button>
+          <button onclick= clear_filter() class="btn btn-success" style="background-color: #ff7d00; border-color: #ff7d00;color:white;width:150px;
+              height:auto; margin-right:25px">Clear</button>
+              <br><br><br><br>
+              <table id= "results"  style='display:none; width:600px; border:solid grey 0.5px'>
+                <thead>
+                    <tr>
+                        <th style = "width:200px">Disease</th>
+                        <th style = "width:200px">Number of articles</th>
+                        <th style = "width:200px">Year of max publications</th>
+                    </tr>
+                  </thead>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+  <!--/ about-->
+  <!--dteam-->
+  <section id="histogram" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-4 col-xs-12">
+          <h2 class="ser-title">Histogram</h2>
+          <hr class="botm-line">
+            <br>
+            <p class="sec-para">Please enter a disease and click on "Submit". Then a histogram of the articles' publications during time for the chosen disease will be displayed.</p>
+            <a href="" style="color: #0cb8b6; padding-top:10px;"></a>
+        </div>
+        <div class="col-md-9 col-sm-8 col-xs-12">
+          <div style="visibility: visible;" class="col-sm-9 more-features-box">
+            <div class="more-features-box-text">
+               <i  aria-hidden="true"></i> </div>
+              <div class="more-features-box-text-description" style="width:700px">
+               <br><br>
+                  <table>
+                    <tr><h3>NAME OF DISEASE</h3></tr>
+                    <tr><td><input onchange='checkHistogram()' id="histog"></td>
+                    <td><button onclick= 'histog()' class="btn btn-success" style="background-color: #0cb8b6; border-color: #0cb8b6;color:white;width:150px;
+                      height:auto; margin-right:25px; ">Submit</button></td></tr>
+                    
+                   
+                  </table>
+                  <div id = "error_input2"></div>
+                  <br><br>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div id='myDiv' ></div>
+      </div>
+  </section>
+
+
+
+
+</body>
+
+</html>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/custom.js"></script>
+
+
+<script type="text/javascript">
+  var line = 0;
+
+  // ----- check input
+  function checkInput(){
+    var input= document.getElementById("disease").value;
+    var res= input.split(",");
+    console.log(res)
+    if(res.length <= 5 && input.length >0){
+      document.getElementById('error_input').innerHTML ="";
+    }
+    else{
+      document.getElementById('error_input').style.color = "#ff7d00";
+      document.getElementById('error_input').innerHTML = "Invalid input"
+    }
+    return res.length <= 5 && input.length >0; 
+
+  }
+
+    //----- check dates
+    function check(from, to, error){
+      var today = new Date();
+      var dd = String(today.getDate()).padStart(2, '0');
+      var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+      var yyyy = today.getFullYear();
+  
+      today = yyyy + '-' + mm + '-' + dd;
+
+      if(document.getElementById(from).value!=="" && document.getElementById(to).value!==""){
+        //both have values
+        if(document.getElementById(to).value >= document.getElementById(from).value && document.getElementById(to).value <= today){
+          document.getElementById(error).innerHTML = ""
+          return true;
+        }
+        else{
+          document.getElementById(error).style.color = "#ff7d00";
+          document.getElementById(error).innerHTML = "Invalid dates"
+          return false
+        }
+
+      }
+      else{
+        //either one empty
+        document.getElementById(error).style.color = "#ff7d00";
+        document.getElementById(error).innerHTML = "Please select a time period"
+        return false
+      }
+  }
+
+  // ----- submit-----
+  function apply(){
+    console.log("apply");
+    var check_d = check("from", "to", "error_date");
+    var check_i= checkInput();
+    var table = document.getElementById("results");
+    
+    
+    if(check_d && check_i){
+        line ++;
+        table.style.display = 'block'
+        var listOfDiseases = document.getElementById("disease").value.split(",")
+        console.log(listOfDiseases)
+        var x = [];
+        var i = 0;
+
+        
+
+        for (var disease of listOfDiseases){
+          console.log(disease)
+          var row = table.insertRow();
+          var cell1 = row.insertCell(0);
+          var cell2 = row.insertCell(1);
+          var cell3 = row.insertCell(2);
+
+
+          cell1.innerHTML = disease;
+          cell2.id = "articles_"+disease+line
+          cell3.id = "year_"+disease+line
+          articles(disease);
+          year(disease);
+
+        } 
+    }
+  }
+
+  // ----- query year
+  function year(input){
+
+    
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          console.log("year_"+input)
+          var str = this.responseText
+          str = str.substring(1, str.length -1).replace('"','')
+          str = str.replace('"','')
+          document.getElementById("year_"+input+line).innerHTML = str.replace(':',' : ')
+        }
+    };
+    xhttp.open("GET", "http://localhost:3000/year/"+input, true);
+    xhttp.send();
+        
+  }
+
+  // ----- query articles
+  function articles(input){
+    listOfInfo = ["from","to"];
+    var str = input;
+    for(id of listOfInfo){
+      str += "/"+document.getElementById(id).value;
+      
+    }
+    console.log(str) 
+    //console.log(str.slice(0,-1));
+    
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("articles_"+input+line).innerHTML = this.responseText
+        }
+    };
+    xhttp.open("GET", "http://localhost:3000/articles/"+str, true);
+    xhttp.send();
+        
+  }
+
+
+
+  // -----  clear 
+  function clear_filter(){
+      //console.log("clear");
+  
+      listToClear = ["from", "to" ,'disease'];
+      listOfErrors = ["error_date",'error_input' ];
+    
+
+  
+      var id;
+      for( id of listToClear){
+          document.getElementById(id).value = "";
+      }
+      for( id of listOfErrors){
+          document.getElementById(id).innerHTML = "";
+      }
+  }
+
+
+  // ----- Histogram -----
+
+    function histog(){
+    var check = checkHistogram()
+    if (check){
+      var disease = document.getElementById('histog').value;
+      console.log("call hisog", disease);
+      var xhttp;
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            histogram(this.responseText)
+          }
+      };
+      xhttp.open("GET", "http://localhost:3000/histog/"+disease, true);
+      xhttp.send();
+    }
+        
+  }
+
+    // ----- CHECK-----
+    function checkHistogram(){
+    var input= document.getElementById("histog").value;
+
+    if(input.length >0){
+      document.getElementById('error_input2').innerHTML ="";
+    }
+    else{
+      document.getElementById('error_input2').style.color = "#ff7d00";
+      document.getElementById('error_input2').innerHTML = "Please type a disease"
+    }
+    return input.length >0;
+  }
+
+  function histogram(input){
+    console.log("histogram",input)
+    var jsonRes = JSON.parse(input)
+    var chart = new CanvasJS.Chart("myDiv", {
+    animationEnabled: true,
+    theme: "light2", // "light1", "light2", "dark1", "dark2"
+    title:{
+      text: "Publications per year"
+    },
+    axisY: {
+      title: "Count"
+    },
+    data: [{        
+      type: "column",  
+      showInLegend: true, 
+      legendMarkerColor: "grey",
+      legendText: "Year of publication ",
+      dataPoints: jsonRes
+    }]
+  });
+  chart.render();
+  }
+
+
+  
+  </script>
