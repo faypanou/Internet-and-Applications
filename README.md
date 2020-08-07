@@ -31,4 +31,19 @@ css
 
 ### ΟΔΗΓΙΕΣ ΕΓΚΑΤΑΣΤΑΣΗΣ :wrench:
 
-to be continued
+1) Για την αξιοποίηση των δεδομένων είναι απαραίτητη πρώτα η απόκτηση του πιο πρόσφατου dataset από την [ιστοσελίδα](https://www.semanticscholar.org/cord19) και έπειτα η επεξεργασία του αρχείου CSV που περιέχει τις απαραίτητες πληροφορίες που χρειαζόμαστε. Ακολουθώντας αυτό το [link](https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/historical_releases.html) επιλέγουμε το πιο προσφατο release file. 
+Το κατεβάζουμε και κάνουμε αποσυμπίεση. Ανοίγουμε το αρχείο metadata σε έναν text editor (πχ visual studio ) και το αποθηκεύουμε ως csv file. 
+
+
+2) Χρήση Mongodb για το διαβασμα των αρχείων Csv. 
+Βήματα: 
+Απόκτηση της [Mongodb](https://www.mongodb.com/try/download/community).
+Άνοιγμα της εφαρμογής και κλικ στο New Connection. Στη συνέχεια επικόλληση του connection string (πχ. URL ή στη μορφή mongodb://localhost: port)
+και κλικ στο connect. 
+Έπειτα ->create database και συμπλήρωση του ονόματος της βάσης και του collection. Δημιουργία βασης.
+Κλικ στο όνομα του collection και επειτα add data->import file-> select file-> select input type file : CSV( don’t ignore empty strings) -> import. 
+Το αρχείο έχει αποθηκευτεί στη βάση και μπορούμε πλέον να επεξεργαστούμε τα δεδομένα χρησιμοποιώντας τη βιβλιοθήκη mongoose μέσω του node.js. 
+
+
+
+
