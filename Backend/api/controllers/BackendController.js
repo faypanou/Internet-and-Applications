@@ -38,10 +38,10 @@ function( err, task) {
   if (err)
     res.send(err);
   res.json(result);
-}); //}]);
+});
 };
  
-// ----- thierd query------
+// ----- third query------
 //  histogram
 
 exports.histog= function(req, res) {
