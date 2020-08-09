@@ -44,7 +44,7 @@ css
 Κλικ στο όνομα του collection και επειτα *add data->import file-> select file-> select input type file : CSV( don’t ignore empty strings) -> import*. 
 Το αρχείο έχει αποθηκευτεί στη βάση και μπορούμε πλέον να επεξεργαστούμε τα δεδομένα χρησιμοποιώντας τη βιβλιοθήκη mongoose μέσω του node.js. 
 
-3) Για την υλοποίηση της εφαρμογής είναι απαραίτητη η εγκατάσταση του [node.js](https://nodejs.org/en/download/). Άνοιγμα του terminal μέσα στο φάκελο του Backend και εγκατάσταση πληκτρολογώντας μια φορά την εντολή:
+3) Για την λειτουργία της εφαρμογής είναι απαραίτητη η εγκατάσταση του [node.js](https://nodejs.org/en/download/). Άνοιγμα του terminal μέσα στο φάκελο του Backend και εγκατάσταση πληκτρολογώντας μια φορά την εντολή:
     ```
     npm install
     ```
